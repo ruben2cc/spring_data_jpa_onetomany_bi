@@ -1,5 +1,6 @@
 package com.benito.onetomany.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -49,5 +50,14 @@ public class Customer {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public void addPhoneNumber(PhoneNumber number) {
+		if(number!=null) {
+			if(numbers==null)
+				numbers=new ArrayList<>();
+			numbers.add(number);
+			number.setCustomer(this);
+		}
 	}
 }
