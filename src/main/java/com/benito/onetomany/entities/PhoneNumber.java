@@ -20,6 +20,11 @@ public class PhoneNumber {
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
+	@Override
+	public String toString() {
+		return "PhoneNumber [id=" + id + ", number=" + number + ", type=" + type + "]";
+	}
+
 	public Customer getCustomer() {
 		return customer;
 	}
